@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial; }
+
+    body { background:#f4f4f4; text-align:center; }
+
+    header { background:#333; color:#fff; padding:20px; }
+
+    nav { background:#444; display:flex; justify-content:center; flex-wrap:wrap; }
+
+    nav button {
+      padding:12px 18px;
+      border:none;
+      background:none;
+      color:#fff;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+    nav button:hover, .active { background:#222; }
+
+    .profile-img {
+      width:130px;
+      height:130px;
+      border-radius:50%;
+      margin-top:10px;
+      border:3px solid white;
+      object-fit:cover;
+    }
+
+    .section {
+      display:none;
+      padding:20px;
+      background:#fff;
+      margin:20px;
+      border-radius:10px;
+    }
+
+    .section.active { display:block; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Sujeet Mahesh Solanke</h1>
+  <p>Web Developer | Student</p>
+
+  <!-- ADD YOUR PHOTO HERE -->
+  <img src="photo.jpeg" class="profile-img">
+</header>
+
+<nav>
+  <button class="active" onclick="showSection('home', event)">Home</button>
+  <button onclick="showSection('about', event)">About</button>
+  <button onclick="showSection('education', event)">Education</button>
+  <button onclick="showSection('skills', event)">Skills</button>
+  <button onclick="showSection('projects', event)">Projects</button>
+  <button onclick="showSection('contact', event)">Contact</button>
+</nav>
+
+<div id="home" class="section active">
+  <h2>Home</h2>
+  <p>Welcome to my portfolio website.</p>
+</div>
+
+<div id="about" class="section">
+  <h2>About Me</h2>
+  <p>I am a First year B.Tech student and currently learning web development. I am passionate about building websites and improving my technical skills.</p>
+</div>
+
+<div id="education" class="section">
+  <h2>Education</h2>
+
+  <p><b>B.Tech:</b> ENTC (Pursuing)</p>
+  <p><b>College:</b> MIT Academy of Engineering</p>
+  <p><b>Year:</b> 2025 - 2029 </p>
+
+  <br>
+
+  <p><b>12th (HSC):</b> 77%</p>
+  <p><b>Board:</b> Maharashtra State Board</p>
+
+  <br>
+
+  <p><b>10th (SSC):</b> 89.40%</p>
+  <p><b>Board:</b> Maharashtra State Board</p>
+
+  <br>
+
+  <p><b>MHT-CET Score:</b> 94.20 Percentile</p>
+
+</div>
+
+<div id="skills" class="section">
+  <h2>Skills</h2>
+  <p>HTML, CSS, C , Python</p>
+</div>
+
+<div id="projects" class="section">
+  <h2>Projects</h2>
+  <p><b>Project 1:</b> Burglar Motion Detector </p>
+  <p><b>Project 2:</b> Cricket Website </p>
+  <p><b>Project 3:</b> Portfolio Website </p>
+</div>
+
+<div id="contact" class="section">
+  <h2>Contact</h2>
+  <p>Email: solankesujeet7408@gmail.com</p>
+</div>
+
+<script>
+  function showSection(id, event) {
+    let sections = document.querySelectorAll('.section');
+    let buttons = document.querySelectorAll('nav button');
+
+    sections.forEach(sec => sec.classList.remove('active'));
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
